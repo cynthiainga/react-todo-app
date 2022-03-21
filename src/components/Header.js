@@ -5,6 +5,7 @@ const Header = () => {
     padding: "20px 0",
     lineHeight: "1.5em",
   };
+
   return (
     <header style={headerStyle}>
       <h1
