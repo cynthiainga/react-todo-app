@@ -71,7 +71,7 @@ const TodoItem = (props) => {
 };
 
 TodoItem.propTypes = {
-  todo: PropTypes.objectOf(PropTypes.shape),
+  todo: PropTypes.instanceOf(Object),
   setUpdate: PropTypes.func,
   deleteTodoProps: PropTypes.func,
   handleChangeProps: PropTypes.func,
