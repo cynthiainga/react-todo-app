@@ -1,9 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import TodoItem from "./TodoItem";
+import React from 'react';
+import PropTypes from 'prop-types';
+import TodoItem from './TodoItem';
 
 const TodosList = (props) => {
-  const { todos, handleChangeProps, deleteTodoProps, setUpdate } = props;
+  const {
+    todos, handleChangeProps, deleteTodoProps, setUpdate,
+  } = props;
 
   return (
     <ul>
@@ -21,7 +23,7 @@ const TodosList = (props) => {
 };
 
 TodosList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.any),
+  todos: PropTypes.arrayOf(PropTypes.shape),
   handleChangeProps: PropTypes.func,
   deleteTodoProps: PropTypes.func,
   setUpdate: PropTypes.func,

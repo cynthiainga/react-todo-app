@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
-import React, { useState } from "react";
-import { FaPlusCircle } from "react-icons/fa";
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { FaPlusCircle } from 'react-icons/fa';
 
 const InputTodo = (props) => {
   const [inputText, setInputText] = useState({
-    title: "",
+    title: '',
   });
 
   const onChange = (e) => {
@@ -19,7 +19,7 @@ const InputTodo = (props) => {
     const { addTodoProps } = props;
     addTodoProps(inputText.title);
     setInputText({
-      title: "",
+      title: '',
     });
   };
 
@@ -36,7 +36,7 @@ const InputTodo = (props) => {
       />
       <button className="input-submit clickable" type="submit">
         <FaPlusCircle
-          style={{ color: "darkcyan", fontSize: "20px", marginTop: "2px" }}
+          style={{ color: 'darkcyan', fontSize: '20px', marginTop: '2px' }}
         />
       </button>
     </form>

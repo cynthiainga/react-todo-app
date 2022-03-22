@@ -1,7 +1,7 @@
-import { FaTrash } from "react-icons/fa";
-import PropTypes from "prop-types";
-import React, { useState } from "react";
-import styles from "./TodoItem.module.css";
+import { FaTrash } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import styles from './TodoItem.module.css';
 
 const TodoItem = (props) => {
   const [editing, setEditing] = useState(false);
@@ -11,18 +11,20 @@ const TodoItem = (props) => {
   };
 
   const handleUpdatedDone = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       setEditing(false);
     }
   };
 
   const completedStyle = {
-    fontStyle: "italic",
-    color: "#595959",
+    fontStyle: 'italic',
+    color: '#595959',
     opacity: 0.4,
-    textDecoration: "line-through",
+    textDecoration: 'line-through',
   };
-  const { todo, handleChangeProps, deleteTodoProps, setUpdate } = props;
+  const {
+    todo, handleChangeProps, deleteTodoProps, setUpdate,
+  } = props;
 
   const { completed, id, title } = todo;
 
@@ -30,9 +32,9 @@ const TodoItem = (props) => {
   const editMode = {};
 
   if (editing) {
-    viewMode.display = "none";
+    viewMode.display = 'none';
   } else {
-    editMode.display = "none";
+    editMode.display = 'none';
   }
 
   return (
@@ -50,7 +52,7 @@ const TodoItem = (props) => {
           className={styles.deleteBtn}
           onClick={() => deleteTodoProps(id)}
         >
-          <FaTrash style={{ clor: "orangered", fontSize: "16px" }} />
+          <FaTrash style={{ clor: 'orangered', fontSize: '16px' }} />
         </button>
       </div>
       <input
@@ -69,7 +71,7 @@ const TodoItem = (props) => {
 };
 
 TodoItem.propTypes = {
-  todo: PropTypes.objectOf(PropTypes.any),
+  todo: PropTypes.objectOf(PropTypes.shape),
   setUpdate: PropTypes.func,
   deleteTodoProps: PropTypes.func,
   handleChangeProps: PropTypes.func,
