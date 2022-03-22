@@ -26,8 +26,8 @@ const TodoItem = (props) => {
 
   const { completed, id, title } = todo;
 
-  let viewMode = {};
-  let editMode = {};
+  const viewMode = {};
+  const editMode = {};
 
   if (editing) {
     viewMode.display = "none";
@@ -68,8 +68,8 @@ const TodoItem = (props) => {
   );
 };
 
-TodoItem.propType = {
-  todo: PropTypes.instanceOf(Object),
+TodoItem.propTypes = {
+  todo: PropTypes.objectOf(PropTypes.any),
   setUpdate: PropTypes.func,
   deleteTodoProps: PropTypes.func,
   handleChangeProps: PropTypes.func,
